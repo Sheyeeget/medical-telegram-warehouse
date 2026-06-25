@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Project Specific (DO NOT COMMIT THESE)
+.env
+data/
+logs/
+*.db
+*.sqlite3
+*.csv
+*.jpg
+*.png
+
+# IDE / OS
+.DS_Store
+.vscode/ (If you want to share settings, remove this line, but the spec has .vscode/settings.json, so we keep it but track it)
+# Actually, let's track .vscode/settings.json but ignore local user settings. Better yet, just don't ignore .vscode so their settings.json is committed.
+# thonny
+*.pid
