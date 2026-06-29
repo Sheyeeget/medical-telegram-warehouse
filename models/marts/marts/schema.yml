@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: dim_channels
+    description: "Channel dimension table"
+    columns:
+      - name: channel_key
+        description: "Surrogate key for channels"
+        tests:
+          - unique
+          - not_null
+      - name: channel_name
+        description: "Channel username"
+        tests:
+          - not_null
+
+  - name: dim_dates
+    description: "Date dimension table"
+    columns:
+      - name: date_key
+        description: "Surrogate key for dates"
+        tests:
+          - unique
+          - not_null
+      - name: full_date
+        tests:
+          - not_null
+
+  - name: fct_messages
+    description: "Fact table for messages"
+    columns:
+      - name: message_id
+        tests:
+          - unique
+          - not_null
+      - name: channel_key
+        tests:
+          - relationships:
+              to: ref('dim_channels')
+              field: channel_key
+      - name: date_key
+        tests:
+          - relationships:
+              to: ref('dim_dates')
+              field: date_key

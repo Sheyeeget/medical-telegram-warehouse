@@ -28,6 +28,6 @@ logs/
 # thonny
 *.pid
 # Secrets & Sessions
-.env
+.envsit
 *.session
 *.session-journal
